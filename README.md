@@ -32,7 +32,7 @@ SOZO uses Google Tecnologies :
 
 I have deployed the project on the Vercel. 
 
-[![Agify Predictor](https://agify-predictor-vaishnavi27-ds-projects.vercel.app/)
+(https://agify-predictor-vaishnavi27-ds-projects.vercel.app/)
 
 
 
