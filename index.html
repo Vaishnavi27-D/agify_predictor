@@ -31,8 +31,52 @@
                 <button type="submit" className="btn btn-primary">Predict Age</button>
             </form>
         );
+const ResultDisplay = ({ name, age }) => (
+            <div className="text-center mt-4">
+                <h2>{name}'s Predicted Age: {age}</h2>
+            </div>
+        );
+
+        const HistoryDisplay = ({ history }) => (
+            <div className="mt-5">
+                <h3>Search History</h3>
+                <ul className="list-group">
+                    {Object.keys(history).reverse().map((name) => (
+                        <li key={name} className="list-group-item">
+                            {name}: {history[name]}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        );
+
+        const App = () => {
+            const [name, setName] = useState('');
+            const [age, setAge] = useState(null);
+            const [history, setHistory] = useState({});
+
+            const handleSubmit = (e) => {
+                e.preventDefault();
+                if (history[name]) {
+                    setAge(history[name]);
+                } else {
+                    $.get(`https://api.agify.io?name=${name}`, (data) => {
+                        setAge(data.age);
+                        setHistory({ ...history, [name]: data.age });
+                    });
+                }
+            };
+
+            return (
+                <div className="container mt-5">
+                    <h1 className="text-center">Agify Predictor</h1>
+                    <NameForm name={name} setName={setName} handleSubmit={handleSubmit} />
+                    {age !== null && <ResultDisplay name={name} age={age} />}
+                    <HistoryDisplay history={history} />
+                </div>
+            );
+        }
 
         ReactDOM.render(<App />, document.querySelector('#root'));
-    </script>
   </body>
 </html>
