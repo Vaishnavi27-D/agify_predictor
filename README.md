@@ -20,10 +20,11 @@ The agify predictor mainly focuses on :
 - Parse the response from the endpoint and display the predicted age of the user.
 
 
-## Tech
+## Tech & API
 
 - [React Js]([https://flutter.dev/docs](https://react.dev/))
 - [jQuery]([https://firebase.google.com/docs](https://jquery.com/))
+- [Agify.io](https://agify.io/documentation#basic-usage)
 
 
 ## Deployment
