@@ -22,8 +22,6 @@ The agify predictor mainly focuses on :
 
 ## Tech
 
-SOZO uses Google Tecnologies :
-
 - [React Js]([https://flutter.dev/docs](https://react.dev/))
 - [jQuery]([https://firebase.google.com/docs](https://jquery.com/))
 
