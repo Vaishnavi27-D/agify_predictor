@@ -22,8 +22,8 @@ The agify predictor mainly focuses on :
 
 ## Tech & API
 
-- [React Js]([https://flutter.dev/docs](https://react.dev/))
-- [jQuery]([https://firebase.google.com/docs](https://jquery.com/))
+- [React Js](https://react.dev/)
+- [jQuery](https://jquery.com/)
 - [Agify.io](https://agify.io/documentation#basic-usage)
 
 
