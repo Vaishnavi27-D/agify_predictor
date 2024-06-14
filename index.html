@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agify Predictor</title>
@@ -11,11 +11,95 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.1.1/pixi.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
-  </head>
-  <body>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Rakkas');
+
+        body {
+            background-color: #232728;
+            overflow: hidden;
+            font-family: 'Rakkas';
+        }
+
+        #pixiCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .title {
+            position: absolute;
+            left: 50%;
+            top: 10%;
+            text-align: center;
+            transform: translate(-50%, -50%);
+            color: #DBAB4C;
+            font-size: 4em;
+        }
+
+        .paragraph {
+            position: absolute;
+            left: 50%;
+            top: 70%;
+            text-align: center;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 1em;
+        }
+
+        #credits {
+            position: absolute;
+            width: 100%;
+            margin: auto;
+            bottom: 0;
+            margin-bottom: 12px;
+            font-family: 'Rakkas', sans-serif;
+            letter-spacing: 0.1rem;
+            color: #777;
+            font-size: 0.7em;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        #credits a {
+            color: #777;
+            text-decoration: none;
+        }
+
+        #credits a:hover {
+            color: #DBAB4C;
+        }
+
+        #root {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            overflow: scroll !important;
+            max-height: 500px;
+        }
+
+        .form-inline {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-control {
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
     <div id="pixiCanvas"></div>
     <h1 class="title">Cloverhound - Agify</h1>
     <div id="root"></div>
+
     <script type="text/babel">
         const { useState } = React;
 
@@ -31,7 +115,8 @@
                 <button type="submit" className="btn btn-primary">Predict Age</button>
             </form>
         );
-const ResultDisplay = ({ name, age }) => (
+
+        const ResultDisplay = ({ name, age }) => (
             <div className="text-center mt-4">
                 <h2>{name}'s Predicted Age: {age}</h2>
             </div>
@@ -78,5 +163,7 @@ const ResultDisplay = ({ name, age }) => (
         }
 
         ReactDOM.render(<App />, document.querySelector('#root'));
-  </body>
+    </script>
+    <script src="styles.js"></script>
+</body>
 </html>
